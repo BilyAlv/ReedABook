@@ -43,16 +43,16 @@ Read A Book es una plataforma web CRUD para la gestión de libros y usuarios. Pe
 
 ### **Administrador**
 - **Email:** admin@readabook.com  
-- **Contraseña:** `admin123`  
+- **Contraseña:** `1234`  
 - **Rol:** Admin  
 
 ### **Usuarios**
 - **Email:** usuario@readabook.com  
-- **Contraseña:** `usuario123`  
+- **Contraseña:** `1234`  
 - **Rol:** Usuario  
 
 - **Email:** bil@readabook.com  
-- **Contraseña:** `bil123`  
+- **Contraseña:** `1234`  
 - **Rol:** Usuario  
 
 ## 📝 Instalación y Configuración
