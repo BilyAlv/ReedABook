@@ -1,0 +1,583 @@
+/* Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #f1c40f;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --dark-bg: #34495e;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    padding-top: 80px; /* Espacio para el header fijo */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--secondary-color);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+/* Header */
+#index_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background-color: white;
+    box-shadow: var(--shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    width: 100%;
+}
+
+#index_header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px; /* Ajusta el espacio entre el logo y el menú */
+}
+
+/* Contenedor del header con márgenes laterales */
+#index_header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 30px; /* Margen a los lados dentro del nav */
+}
+
+#index_logo h1 {
+    color: var(--primary-color);
+    font-size: 28px;
+    margin-bottom: 0;
+}
+
+#index_logo p {
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+#index_navigation {
+    padding: 0 20px; /* Margen adicional a los lados dentro del nav */
+}
+
+#index_navigation ul {
+    display: flex;
+}
+
+#index_navigation li {
+    margin-left: 25px;
+}
+
+#index_navigation a {
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+#index_navigation a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary-color);
+    transition: var(--transition);
+}
+
+#index_navigation a:hover:after,
+#index_navigation a.active:after {
+    width: 100%;
+}
+
+/* Hero Section */
+#index_hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 500px;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--primary-color), var(--dark-bg));
+    color: white;
+    border-radius: 15px;
+    margin: 40px 0;
+    box-shadow: var(--shadow);
+}
+
+#index_hero_content {
+    flex: 1;
+    padding: 0 50px;
+    z-index: 2;
+}
+
+#index_hero_content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#index_hero_content p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+#index_hero_image {
+    flex: 1;
+    position: relative;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-right: 50px;
+    z-index: 1;
+    box-shadow: var(--shadow);
+    width: 100%;
+}
+
+#index_hero_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Featured Books */
+#index_featured {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#index_featured h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+#index_featured h2:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#index_book_slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 10px;
+    -ms-overflow-style: none;  /* Hide scrollbar IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar Firefox */
+}
+
+#index_book_slider::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome, Safari, Opera */
+}
+
+.book-card {
+    min-width: 250px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    transform: translateY(0);
+}
+
+.book-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover {
+    height: 300px;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.book-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.author {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+#index_slider_controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.slider-btn {
+    background-color: var(--primary-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Categories */
+#index_categories {
+    padding: 60px 0;
+    background-color: white;
+    text-align: center;
+}
+
+#index_categories h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
+#index_categories h2:after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#index_category_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.category {
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    padding: 30px 20px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.category-icon {
+    height: 60px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Reading Club */
+#index_reading_club {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 40px 0;
+    box-shadow: var(--shadow);
+}
+
+#index_club_content {
+    flex: 1;
+    padding: 50px;
+}
+
+#index_club_content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#index_club_content p {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+#index_club_image {
+    flex: 1;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Newsletter */
+#index_newsletter {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--light-bg);
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+#index_newsletter h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+#index_newsletter p {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #666;
+}
+
+#index_newsletter_form {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#index_email_input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 30px 0 0 30px;
+    font-size: 16px;
+    outline: none;
+}
+
+#index_submit_button {
+    border-radius: 0 30px 30px 0;
+    padding: 12px 25px;
+}
+
+/* Footer */
+#index_footer {
+    background-color: var(--dark-bg);
+    color: white;
+    padding: 60px 30px 20px;  /* Añadido 30px de padding a los lados */
+    width: 100%;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    margin: 0;
+    position: relative;
+}
+
+
+#index_footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px; /* Aumenta el margen lateral */
+}
+
+#index_footer_content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    bottom: 0;
+    left: 0;
+}
+
+#index_footer_links ul li {
+    margin-bottom: 10px;
+}
+
+#index_footer_links a {
+    color: #ccc;
+}
+
+#index_footer_links a:hover {
+    color: var(--secondary-color);
+}
+
+#index_footer p {
+    color: #ccc;
+    margin-bottom: 10px;
+}
+
+#index_social_icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icon {
+    color: white;
+    font-size: 20px;
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    #index_hero {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #index_hero_content {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .book-card {
+        min-width: 200px;
+    }
+
+    #index_categories h2 {
+        font-size: 1.5rem;
+    }
+
+    .category {
+        padding: 25px 15px;
+    }
+
+    #index_hero_image {
+        margin-right: 0;
+        width: 100%;
+        height: auto;
+    }
+
+    #index_footer_content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Contenedor del nav con márgenes laterales */
+#index_navigation {
+    padding: 0 30px; /* Mismo margen que el header */
+}
+
+    #index_navigation ul {
+        display: block;
+    }
+
+    #index_navigation li {
+        margin-left: 0;
+    }
+
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
