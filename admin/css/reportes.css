@@ -1,0 +1,282 @@
+/* Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #e74c3c;
+    --accent-color: #f1c40f;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+    --dark-bg: #34495e;
+    --sidebar-bg: #2c3e50;
+    --header-bg: #fff;
+    --card-bg: #fff;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --info-color: #3498db;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Admin Layout */
+.admin-wrapper {
+    display: flex;
+    flex: 1;
+    margin-left: 260px; /* Ajusta esto para asegurar que el contenido no se solape con la barra lateral */
+    position: relative; /* Para asegurarse de que el contenido no quede detrás de la barra lateral */
+}
+
+/* Sidebar Navigation */
+nav {
+    width: 260px;
+    background: var(--sidebar-bg);
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999; /* Asegura que la barra lateral esté por encima del contenido */
+    overflow-y: auto;
+    transition: var(--transition);
+}
+
+.admin-logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-logo h1 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.admin-logo p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+}
+
+.admin-menu {
+    padding: 20px 0;
+}
+
+.admin-menu li {
+    margin-bottom: 5px;
+    list-style: none;
+}
+
+.admin-menu li a {
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.admin-menu li a:hover, 
+.admin-menu li.active a {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.admin-menu li a i {
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+/* Make the existing navigation match sidebar style */
+nav {
+    display: block;
+    padding: 0;
+    box-shadow: none;
+}
+
+nav a {
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    text-decoration: none;
+    transition: var(--transition);
+    font-weight: normal;
+    border-left: 4px solid transparent;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Header Styles */
+header {
+    background-color: var(--header-bg);
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 99;
+    margin-left: 260px;
+    width: calc(100% - 260px);
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 28px;
+}
+
+/* Main Container */
+.container {
+    margin-left: 28px; /* Aumentar el margen para dejar espacio para la barra lateral */
+    padding: 20px;
+    width: calc(100% - 70px); /* El ancho se ajusta teniendo en cuenta la barra lateral */
+}
+
+
+/* Report Sections */
+.report-section {
+    background-color: var(--card-bg);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.report-section h2 {
+    color: var(--primary-color);
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 500;
+}
+
+tr:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Button Styles */
+.button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+}
+
+a.button {
+    background-color: var(--warning-color);
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+a.button:hover {
+    background-color: #d35400;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    nav {
+        width: 70px;
+    }
+    
+    .container {
+        margin-left: 90px; /* Ajusta el margen cuando la barra lateral sea más pequeña */
+        width: calc(100% - 90px); /* Ajusta el ancho para que no se solape */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin-left: 70px; /* Ajusta el margen para pantallas más pequeñas */
+        width: calc(100% - 70px); /* Ajusta el ancho */
+    }
+}
+
+
+@media (max-width: 576px) {
+    nav {
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    header, .container {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    header h1 {
+        font-size: 24px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .form-container {
+        padding: 15px;
+    }
+    
+    th, td {
+        padding: 10px;
+    }
+}
